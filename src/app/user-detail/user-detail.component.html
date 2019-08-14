@@ -8,10 +8,14 @@
         <input [(ngModel)]="user.firstName" placeholder="voornaam"/>
         <button (click)="setFirstName()">Save</button>
       </label>
+    </div>
+    <div>
       <label>Verander je achternaam:
         <input [(ngModel)]="user.lastName" placeholder="achternaam"/>
         <button (click)="setLastName()">Save</button>
       </label>
+    </div>
+    <div>
       <label>Verander je status:
         <input [(ngModel)]="user.userStatus" placeholder="status"/>
         <button (click)="setStatus()">Save</button>
