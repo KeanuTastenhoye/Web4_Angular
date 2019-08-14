@@ -1,0 +1,13 @@
+<div *ngIf="user">
+  <h2>{{user.userId | uppercase}} Details</h2>
+    <div><span>First Name: </span>{{user.firstName}}</div>
+    <div><span>Last Name: </span>{{user.lastName}}</div>
+    <div><span>Status: </span>{{user.userStatus}}</div>
+    <div>
+      <label>Verander je status:
+        <input [(ngModel)]="user.userStatus" placeholder="status"/>
+        <button (click)="setStatus()">Save</button>
+      </label>
+    </div>
+    <button (click)="goBack()">Ga terug</button>
+</div>
