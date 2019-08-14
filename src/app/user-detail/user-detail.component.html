@@ -4,6 +4,14 @@
     <div><span>Last Name: </span>{{user.lastName}}</div>
     <div><span>Status: </span>{{user.userStatus}}</div>
     <div>
+      <label>Verander je voornaam:
+        <input [(ngModel)]="user.firstName" placeholder="voornaam"/>
+        <button (click)="setFirstName()">Save</button>
+      </label>
+      <label>Verander je achternaam:
+        <input [(ngModel)]="user.lastName" placeholder="achternaam"/>
+        <button (click)="setLastName()">Save</button>
+      </label>
       <label>Verander je status:
         <input [(ngModel)]="user.userStatus" placeholder="status"/>
         <button (click)="setStatus()">Save</button>

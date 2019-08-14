@@ -17,6 +17,20 @@ export class UserService {
     this.messageService.add('UserService: fetched users');
     return this.http.get<User[]>(this.url, {params: new HttpParams().set('action', 'GetUsers')});
   }
+  setFirstName(user: User): void {
+    const body = new HttpParams().append('firstName', user.firstName).append('userId', user.userId);
+    const header = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+
+    this.http.post<any>(this.url + '?action=SetUserAppFirstName&firstName=' + user.firstName + '&userId=' +
+      user.userId, body, {headers: header}).subscribe((res) => console.log(res), (err) => console.log(err));
+  }
+  setLastName(user: User): void {
+    const body = new HttpParams().append('lastName', user.lastName).append('userId', user.userId);
+    const header = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+
+    this.http.post<any>(this.url + '?action=SetUserAppLastName&lastName=' + user.lastName + '&userId=' +
+      user.userId, body, {headers: header}).subscribe((res) => console.log(res), (err) => console.log(err));
+  }
   setStatus(user: User): void {
     const body = new HttpParams().append('state', user.userStatus).append('userId', user.userId);
     const header = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');

@@ -31,4 +31,10 @@ export class UserDetailComponent implements OnInit {
   setStatus(): void {
     this.userService.setStatus(this.user);
   }
+  setLastName(): void {
+    this.userService.setLastName(this.user);
+  }
+  setFirstName(): void {
+    this.userService.setFirstName(this.user);
+  }
 }
